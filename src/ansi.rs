@@ -1109,6 +1109,10 @@ pub enum Attr {
     Hidden,
     /// Strikeout text.
     Strike,
+    /// Cancel alternative font.
+    CancelAlt,
+    /// Alternative font.
+    Alt,
     /// Cancel bold.
     CancelBold,
     /// Cancel bold and dim.
@@ -1789,6 +1793,8 @@ fn attrs_from_sgr_parameters(params: &mut ParamsIter<'_>) -> Vec<Option<Attr>> {
             [7] => Some(Attr::Reverse),
             [8] => Some(Attr::Hidden),
             [9] => Some(Attr::Strike),
+            [10] => Some(Attr::CancelAlt),
+            [11] => Some(Attr::Alt),
             [21] => Some(Attr::CancelBold),
             [22] => Some(Attr::CancelBoldDim),
             [23] => Some(Attr::CancelItalic),
